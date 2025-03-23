@@ -24,6 +24,12 @@ export class Game extends Container {
       this.player.flap();
     });
 
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Space") {
+        this.player.flap();
+      }
+    });
+
     this.addChild(hitArea);
   }
 
