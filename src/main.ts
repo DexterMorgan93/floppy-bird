@@ -6,7 +6,7 @@ import { Game } from "./game";
 const app = new Pixi.Application();
 
 async function setup() {
-  await app.init({ width: 1024, height: 768, backgroundColor: 0x000000 });
+  await app.init({ width: 1024, height: 768, backgroundColor: "blue" });
   document.body.appendChild(app.canvas);
 }
 
@@ -14,6 +14,7 @@ async function setup() {
   await setup();
 
   const game = new Game(app);
+  app.stage.addChild(game);
   app.ticker.add(game.handleUpdate, game);
 
   // document.addEventListener("keydown", (e) => {
